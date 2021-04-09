@@ -1,7 +1,12 @@
 //Author: Je0azul5
 package main
 
-import "fmt"
+//lenguaje extricto con el tiado
+//strconv se encarga de las conversiones de strings
+import (
+	"fmt"
+	"strconv"
+)
 
 //definiciones de variables
 var entero int
@@ -10,6 +15,8 @@ var numeroflotante float32
 var text string
 var bol bool
 
+/*Si se quiere importar las variables a otros paquetes se
+definen con la primera letra en mayuscula*/
 //inicializacion multiple
 var uno, dos, tres int
 
@@ -24,5 +31,24 @@ func main() {
 	//asignacion multiple
 	doce, ss, cuatro, ss2 := 12, "txt en variable", 4, "txt concatenado"
 	fmt.Println(texto, "\n->", doce, "->", ss, "->", cuatro, "->", ss2, "\n-algo")
+	//llamdo de funciones
+	ModTipadoFloat()
+	ModTipadoStringEntero()
+}
 
+func ModTipadoFloat() {
+	//cambio de tipado de float32 a int
+	nueva := int(numeroflotante)
+	fmt.Println(nueva)
+}
+
+//muestra un numero en string
+func ModTipadoStringEntero() {
+	nn := 12
+	//los porcentajes son verbos, es decir un tipo de conversion de numero a texto
+	texto := fmt.Sprintf("%d", nn)
+	fmt.Println(texto)
+	//solo recibe entero generico
+	texto = strconv.Itoa(nn)
+	fmt.Println(texto)
 }
