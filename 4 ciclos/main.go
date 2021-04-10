@@ -42,4 +42,16 @@ func main() {
 		fmt.Println("Sos un boludo")
 	}
 
+RUTINA:
+	for n < 10 {
+		if n == 4 {
+			n = n + 4
+			fmt.Println("Voy a rutina de suma i+2")
+			goto RUTINA
+		}
+		fmt.Printf("Vlor de i %d\n", n)
+		n++
+
+	}
+
 }
